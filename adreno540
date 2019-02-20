@@ -1,0 +1,70 @@
+#!/system/bin/sh
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
+#                 Copyright (C) 2019 InYour~SBzain                     
+#Adreno 540
+#msm8998
+clear
+sleep 0.1
+echo -e $Y"$divider"$N
+sleep 0.1
+echo ''
+sleep 0.1
+echo -e $G"WELCOME TO RADEON 540 $ver"$N
+sleep 0.1
+echo ''
+sleep 0.1
+echo -e $Y"$divider"$N
+sleep 2
+clear
+echo -e $W'Checking root'$N; sleep 0.2; clear
+echo -e $W'Checking root.'$N; sleep 0.2; clear
+echo -e $W'Checking root..'$N; sleep 0.2; clear
+echo -e $W'Checking root...'$N; sleep 0.5; clear
+echo -e $W'Checking root..'$N; sleep 0.2; clear
+echo -e $W'Checking root.'$N; sleep 0.2; clear
+echo -e $W'Checking root'$N; sleep 0.2; clear
+
+id="$(id)"; id="${id#*=}"; id="${id%%\(*}"; id="${id%% *}"
+if [ "$id" != "0" ] && [ "$id" != "root" ]
+then
+	clear
+	sleep 0.1
+	echo -e $Y"$divider"$N
+	sleep 0.1
+	echo ''
+	sleep 0.1
+	echo -e $R'Please type'$N $G'su'$N $R'first'$N
+	sleep 0.1
+	echo -e $R'then type'$N $G'EXYN'$N
+	sleep 0.1
+	echo ''
+	sleep 0.1
+	echo -e $Y"$divider"$N
+	exit 0
+else
+	clear
+	sleep 0.1
+	echo -e $Y"$divider"$N
+	sleep 0.1
+	echo ''
+	sleep 0.1
+	echo -e $G'Cool !!!'$N
+	sleep 0.1
+	echo -e $G'your device is rooted...'$N
+	sleep 0.1
+	echo ''
+	sleep 0.1
+	echo -e $Y"$divider"$N
+	sleep 2
+fi
+
+echo '14160,18880,23600,51920,70800,75520' > /sys/module/lowmemorykiller/parameters/minfree
+
+echo 2048 > /sys/block/mmcblk0/queue/read_ahead_kb
+
+echo '7100000000' > /sys/class/kgsl/kgsl-3d0/devfreq/min_freq
+echo '7100000000' > /sys/class/kgsl/kgsl-3d0/devfreq/min_freq
+
+echo "|======================================|"
+echo "|           Adreno 540 Aktif           |"
+echo "|======================================|"
